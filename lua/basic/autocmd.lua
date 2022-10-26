@@ -57,9 +57,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- bulb
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-
 -- colorizer
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = { "*.html", "*.css" },

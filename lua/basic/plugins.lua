@@ -107,14 +107,8 @@ packer.startup(
 				'nvim-lualine/lualine.nvim',
 				requires = {
 					'kyazdani42/nvim-web-devicons',
-					'nvim-lua/lsp-status.nvim',
 				},
 				config = function() require("conf.lualine") end
-			}
-			-- symbols-outline
-			use {
-				'simrat39/symbols-outline.nvim',
-				config = function() require("conf.symbols-outline") end
 			}
 			-- hop.nvim
 			use {
@@ -177,48 +171,6 @@ packer.startup(
 					'nvim-treesitter/nvim-treesitter-context'
 				},
 				config = function() require("conf.nvim-treesitter") end
-			}
-			-- LSP
-			use {
-				"neovim/nvim-lspconfig",
-				requires = {
-					'nvim-lua/lsp-status.nvim',
-					"williamboman/mason.nvim",
-					"williamboman/mason-lspconfig.nvim",
-					"folke/neodev.nvim"
-				},
-				config = function()
-					require("conf.mason")
-					require("conf.nvim-lspconfig")
-				end
-			}
-			use {
-				'kosayoda/nvim-lightbulb',
-				config = function()
-					require("conf.nvim-lightbulb")
-				end
-			}
-			-- lsp_signature
-			use {
-				"ray-x/lsp_signature.nvim",
-				config = function()
-					require("conf.lsp_signature")
-				end
-			}
-			-- nvim-cmp
-			use {
-				"hrsh7th/nvim-cmp",
-				requires = {
-					"onsails/lspkind-nvim",
-					"hrsh7th/cmp-nvim-lsp",
-					"hrsh7th/cmp-buffer",
-					"hrsh7th/cmp-path",
-					"hrsh7th/cmp-cmdline",
-					"L3MON4D3/LuaSnip",
-					"saadparwaiz1/cmp_luasnip",
-					"rafamadriz/friendly-snippets",
-				},
-				config = function() require("conf.nvim-cmp") end
 			}
 			-- debug
 			use {
