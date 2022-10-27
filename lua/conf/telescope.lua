@@ -2,8 +2,7 @@
 -- https://github.com/nvim-telescope/telescope-project.nvim
 -- https://github.com/GustavoKatel/telescope-asynctasks.nvim
 
--- [telescope-z empty](https://github.com/nvim-telescope/telescope-z.nvim/issues/14#issuecomment-1221745266)
-if vim.fn.has("wsl") == 0 and vim.fn.has("linux")==0 then
+if vim.fn.has("wsl") == 0 and vim.fn.has("linux") == 0 then
 	vim.g.sqlite_clib_path = "C:/Windows/System32/sqlite3.dll"
 end
 require('telescope').setup {
@@ -21,7 +20,9 @@ require('telescope').setup {
 		selection_caret = "  ",
 		entry_prefix = "  ",
 		sorting_strategy = "descending",
-		file_ignore_patterns = { "^node_modules/", "^.git/" },
+		file_ignore_patterns = {
+			"^node_modules", "^.git", "build", ".cache"
+		},
 		path_display = { "smart" },
 		winblend = 0,
 		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,

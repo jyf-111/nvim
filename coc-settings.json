@@ -1,11 +1,14 @@
+// https://github.com/neoclide/coc.nvim/wiki/Language-servers
+// https://github.com/clangd/coc-clangd
+// https://github.com/neoclide/coc-java
+// https://github.com/xiyaowong/coc-sumneko-lua
 {
     "languageserver": {
         "coc-clangd": {
-            "command": "clangd",
+            "command": "clangd.cmd",
             "rootPatterns": [
                 "compile_flags.txt",
-                "compile_commands.json",
-                ".git"
+                "compile_commands.json"
             ],
             "filetypes": [
                 "c",
@@ -15,82 +18,45 @@
                 "objc",
                 "objcpp"
             ]
+        },
+        "lua": {
+            "command": "lua-language-server.cmd",
+            "args": [],
+            "rootPatterns": [
+                ".git"
+            ],
+            "filetypes": [
+                "lua"
+            ]
+        },
+        "cmake": {
+            "command": "cmake-language-server.cmd",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
         }
     },
+    //clangd
+    "clangd.arguments": [],
+    "clangd.fallbackFlags": [],
+    "clangd.path": "C:/Users/jyf/AppData/Local/nvim-data/mason/bin/clangd.cmd",
+    //jdtls
+    "java.jdt.ls.home": "C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/",
+    "tsserver.locale": "zn-ch",
+    "sumneko-lua.enableNvimLuaDev": true,
     //markdown-preview
     "markdown-preview-enhanced.enableScriptExecution": true,
     //coc-explorer
     "explorer.width": 25,
-    "explorer.quitOnOpen": true,
-    "explorer.sources": [
-        {
-            "name": "buffer",
-            "expand": false
-        },
-        {
-            "name": "file",
-            "expand": true
-        }
-    ],
-    "explorer.file.column.indent.indentLine": true,
     "explorer.file.showHiddenFiles": true,
     "explorer.icon.enableNerdfont": true,
-    "explorer.keyMappingMode": "none",
-    "explorer.buffer.showHiddenBuffers": false,
-    "explorer.keyMappings.global": {
-        "k": "nodePrev",
-        "j": "nodeNext",
-        "<space>": "toggleSelection",
-        "<tab>": "actionMenu",
-        "gl": "expandRecursive",
-        "gh": "collapseRecursive",
-        "i": [
-            "wait",
-            "expandable?",
-            "cd",
-            "open"
-        ],
-        "I": "open:vsplit",
-        "o": [
-            "wait",
-            "expanded?",
-            "collapse",
-            "expand"
-        ],
-        "c": [
-            "collapse"
-        ],
-        "O": "open:tab",
-        "n": "collapse",
-        "l": "gotoParent",
-        "yp": "copyFilepath",
-        "yn": "copyFilename",
-        "yy": "copyFile",
-        "dd": "cutFile",
-        "pp": "pasteFile",
-        "dD": "deleteForever",
-        "a": "addFile",
-        "M": "addDirectory",
-        "rn": "rename",
-        ".": "toggleHidden",
-        "R": "refresh",
-        "?": "help",
-        "q": "quit",
-        "X": "systemExecute",
-        "gd": "listDrive",
-        "f": "search",
-        "F": "searchRecursive",
-        "B": "gotoSource:file",
-        "b": "gotoSource:buffer",
-        "[[": "sourcePrev",
-        "]]": "sourceNext",
-        "[d": "diagnosticPrev",
-        "]d": "diagnosticNext",
-        "[c": "gitPrev",
-        "]c": "gitNext",
-        "<<": "gitStage",
-        ">>": "gitUnstage"
-    },
+    "explorer.file.reveal.whenOpen": true,
     //coc-webview
     "webview.colorStrategy": "dark",
     "suggest.noselect": false,

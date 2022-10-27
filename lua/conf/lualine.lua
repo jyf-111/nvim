@@ -17,9 +17,9 @@ require('lualine').setup {
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = {},
+		lualine_b = {{"diagnostics", sources = { 'coc' }}},
 		lualine_c = { 'branch', 'diff' },
-		lualine_x = { { "require('lsp-status').status():sub(1,60)" }, 'encoding',
+		lualine_x = { 'g:coc_status' , 'encoding',
 			{ 'fileformat', symbols = { unix = 'LF', dos = 'CRLF', mac = 'CR' } }, 'filetype' },
 		lualine_y = {},
 		lualine_z = { 'progress' },

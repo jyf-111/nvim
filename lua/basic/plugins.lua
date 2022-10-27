@@ -28,6 +28,10 @@ packer.startup(
 				branch = 'release',
 				confg = function() require("conf.coc") end
 			}
+			use {
+				"williamboman/mason.nvim",
+				config = function() require("mason").setup() end
+			}
 			-- theme
 			use 'navarasu/onedark.nvim'
 			--  key-menu
@@ -48,7 +52,6 @@ packer.startup(
 				"jbyuki/venn.nvim",
 				config = function() require("conf.venn") end
 			}
-
 			-- git
 			use {
 				'lewis6991/gitsigns.nvim',
@@ -100,11 +103,6 @@ packer.startup(
 				branch = 'v2',
 				config = function() require("conf.hop") end
 			}
-			-- autopairs
-			use {
-				"windwp/nvim-autopairs",
-				config = function() require("conf.nvim-autopairs") end
-			}
 			-- [surround](https://github.com/ur4ltz/surround.nvim)
 			use {
 				"ur4ltz/surround.nvim",
@@ -119,9 +117,9 @@ packer.startup(
 			}
 			-- comment
 			use {
-			'numToStr/Comment.nvim',
-			requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
-			config = function() require('conf.comment') end
+				'numToStr/Comment.nvim',
+				requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+				config = function() require('conf.comment') end
 			}
 			-- telescope
 			use {
