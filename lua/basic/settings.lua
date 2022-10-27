@@ -1,3 +1,4 @@
+
 vim.o.fenc = "utf-8"
 vim.o.fencs = "utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936"
 vim.o.encoding = "utf-8"
@@ -9,24 +10,11 @@ vim.g.floaterm_width = 0.8
 vim.g.floaterm_height = 0.8
 vim.g.floaterm_autoclose = 0
 
-if vim.fn.has('wsl')==1 then
-	vim.cmd [[
-	let g:clipboard = {
-          \   'name': 'myClipboard',
-          \   'copy': {
-          \      '+': ['/mnt/c/windows/system32/clip.exe'],
-          \      '*': ['/mnt/c/windows/system32/clip.exe'],
-          \    },
-          \   'paste': {
-          \      '+': ['/mnt/c/windows/system32/clip.exe'],
-          \      '*': ['/mnt/c/windows/system32/clip.exe'],
-          \   },
-          \   'cache_enabled': 1,
-          \ }
-]]
-else
-	vim.o.clipboard = "" --unnamed unnamedplus
-end
+
+vim.o.clipboard = "" --unnamed unnamedplus
+
+vim.o.pumheight=10
+vim.o.completeopt = "menu,preview"
 
 vim.o.updatetime = 300
 vim.o.timeoutlen = 300

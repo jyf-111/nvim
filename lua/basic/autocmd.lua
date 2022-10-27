@@ -78,15 +78,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 
--- 工作区改变删除buffer
-function Bufdelete()
-	vim.cmd [[LspStop vim.bo.filetype ]]
-	vim.cmd [[ %bd!]]
-end
-
-vim.api.nvim_create_user_command("Bd", "lua Bufdelete()", {})
-
-
 -- lint
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     callback = function()

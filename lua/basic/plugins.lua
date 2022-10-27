@@ -23,6 +23,11 @@ packer.startup(
 		function(use)
 			use "wbthomason/packer.nvim"
 			use 'lewis6991/impatient.nvim'
+			use {
+				'neoclide/coc.nvim',
+				branch = 'release',
+				confg = function() require("conf.coc") end
+			}
 			-- theme
 			use 'navarasu/onedark.nvim'
 			--  key-menu
@@ -30,6 +35,7 @@ packer.startup(
 				'linty-org/key-menu.nvim',
 				config = function() require("conf.key-menu") end
 			}
+
 			use {
 				'norcalli/nvim-colorizer.lua',
 				config = function() require("conf.nvim-colorizer") end,
@@ -42,20 +48,11 @@ packer.startup(
 				"jbyuki/venn.nvim",
 				config = function() require("conf.venn") end
 			}
+
 			-- git
 			use {
 				'lewis6991/gitsigns.nvim',
 				config = function() require("conf.gitsigns") end
-			}
-			-- neo-tree
-			use {
-				"nvim-neo-tree/neo-tree.nvim",
-				requires = {
-					{ "nvim-lua/plenary.nvim" },
-					{ "kyazdani42/nvim-web-devicons" }, -- not strictly required, but recommended
-					{ "MunifTanjim/nui.nvim" },
-				},
-				config = function() require("conf.neo-tree") end
 			}
 			-- async
 			use {
@@ -67,24 +64,11 @@ packer.startup(
 				"Shatur/neovim-session-manager",
 				config = function() require("conf.neovim-session-manager") end
 			}
-			-- sniprun
-			use {
-				'michaelb/sniprun',
-				run = './install.sh',
-				config = function() require("conf.sniprun") end
-			}
 			-- [web-tools](https://github.com/ray-x/web-tools.nvim)
 			use {
 				"ray-x/web-tools.nvim",
 				run = "npm install -g browser-sync",
 				config = function() require 'web-tools'.setup() end
-			}
-			-- markdown-preview https://github.com/iamcco/markdown-preview.nvim
-			use {
-				"iamcco/markdown-preview.nvim",
-				run = "cd app && npm install",
-				setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-				ft = { "markdown" },
 			}
 			-- test
 			use {
@@ -135,9 +119,9 @@ packer.startup(
 			}
 			-- comment
 			use {
-				'numToStr/Comment.nvim',
-				requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
-				config = function() require('conf.comment') end
+			'numToStr/Comment.nvim',
+			requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+			config = function() require('conf.comment') end
 			}
 			-- telescope
 			use {
@@ -152,8 +136,6 @@ packer.startup(
 					{ 'nvim-telescope/telescope-fzf-native.nvim',
 						run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 					},
-					{ "nvim-telescope/telescope-symbols.nvim" },
-					{ 'nvim-telescope/telescope-z.nvim' },
 					{ 'GustavoKatel/telescope-asynctasks.nvim' },
 					{ 'dawsers/telescope-floaterm.nvim' },
 				},

@@ -20,6 +20,7 @@ require("indent_blankline").setup {
 		"markdown",
 		"lspinfo",
 		"plugin",
-		"text"
+		"text",
+        "coc-explorer"
 	},
 }

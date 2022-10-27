@@ -14,3 +14,5 @@ repgrep
 sqlite3 [sqlite.dll windows](https://www.sqlite.org/download.html) ,on ubuntu sqlite3 (libsqlite3-dev)  
 
 touch vim.fn.stdpath "data" .. '/telescope_history.sqlite3
+
+coc.nvim 和 autopair <CR>绑定上冲突

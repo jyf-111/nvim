@@ -39,6 +39,7 @@ require("onedark").setup {
 		TreesitterContextLineNumber = { fg = '#a0a8b7' },
 		PmenuSel                    = { fg = "NONE", bg = "#5f668a" },
 		Pmenu                       = { fg = "#C5CDD9", bg = "NONE" },
+		CocMenuSel					= { bg="#13354A" }
 	}, -- Override highlight groups
 	diagnostics = {
 		darker = false, -- darker colors for diagnostic
