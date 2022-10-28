@@ -42,6 +42,26 @@
             }
         }
     },
+    //https://github.com/neoclide/coc.nvim/issues/3792
+    "git.floatConfig": {
+        "border": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true
+    },
+    "signature.floatConfig": {
+        "border": true
+    },
+    "hover.floatConfig": {
+        "border": true
+    },
+    "suggest.floatConfig": {
+        "border": true
+    },
+    //coc-highlight
+    "colors.filetypes": [
+        "*"
+    ],
     //clangd
     "clangd.arguments": [],
     "clangd.fallbackFlags": [],
@@ -108,6 +128,7 @@
     "list.nextKeymap": "<C-e>",
     "list.previousKeymap": "<C-u>",
     "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     // 保存时调整格式
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
@@ -123,5 +144,6 @@
         "markdown",
         "lua",
         "bash"
-    ]
+    ],
+    "git.enableGutters": true
 }

@@ -40,22 +40,12 @@ packer.startup(
 				config = function() require("conf.key-menu") end
 			}
 
-			use {
-				'norcalli/nvim-colorizer.lua',
-				config = function() require("conf.nvim-colorizer") end,
-				ft = { 'css', 'javascript', 'html' }
-			}
 			-- vim-floaterm
 			use 'voldikss/vim-floaterm'
 			--  draw
 			use {
 				"jbyuki/venn.nvim",
 				config = function() require("conf.venn") end
-			}
-			-- git
-			use {
-				'lewis6991/gitsigns.nvim',
-				config = function() require("conf.gitsigns") end
 			}
 			-- async
 			use {
@@ -129,7 +119,6 @@ packer.startup(
 					{ "nvim-telescope/telescope-smart-history.nvim", requires = { "kkharji/sqlite.lua" } },
 					{ "nvim-telescope/telescope-dap.nvim", requires = { "mfussenegger/nvim-dap" } },
 					{ "nvim-telescope/telescope-ui-select.nvim" },
-					{ "nvim-telescope/telescope-packer.nvim" },
 					{ "nvim-telescope/telescope-project.nvim" },
 					{ 'nvim-telescope/telescope-fzf-native.nvim',
 						run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'

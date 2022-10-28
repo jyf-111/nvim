@@ -25,12 +25,12 @@ require("onedark").setup {
 	-- Custom Highlights --
 	colors = {}, -- Override default colors
 	highlights = {
-		TSComment                     = { fg = '#868f8b' },
-		Normal                      = { bg = 'NONE' },
-		NormalFloat                 = { bg = 'NONE' },
-		FloatBorder                 = { bg = 'NONE' },
-		Floaterm                    = { bg = 'NONE' },
-		FloatermBorder              = { bg = 'NONE' },
+		TSComment                   = { fg = '#868f8b' },
+		-- Normal                      = { bg = 'NONE' },
+		-- NormalFloat                 = { bg = 'NONE' },
+		-- FloatBorder                 = { bg = 'NONE' },
+		-- Floaterm                    = { bg = 'NONE' },
+		-- FloatermBorder              = { bg = 'NONE' },
 		TelescopePromptBorder       = { fg = '#a7b8d6' },
 		TelescopePreviewBorder      = { fg = '#a7b8d6' },
 		TelescopeResultsBorder      = { fg = '#a7b8d6' },
@@ -39,7 +39,8 @@ require("onedark").setup {
 		TreesitterContextLineNumber = { fg = '#a0a8b7' },
 		PmenuSel                    = { fg = "NONE", bg = "#5f668a" },
 		Pmenu                       = { fg = "#C5CDD9", bg = "NONE" },
-		CocMenuSel					= { bg="#13354A" }
+		CocMenuSel                  = { bg = "#13354A" },
+		CocListLine                 = { bg = "#13354A" }
 	}, -- Override highlight groups
 	diagnostics = {
 		darker = false, -- darker colors for diagnostic

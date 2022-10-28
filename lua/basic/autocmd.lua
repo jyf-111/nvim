@@ -57,18 +57,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- colorizer
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = { "*.html", "*.css" },
-	command = "ColorizerAttachToBuffer"
-})
-
-vim.api.nvim_create_autocmd("BufLeave", {
-	pattern = { "*.html", "*.css" },
-	command = "ColorizerDetachFromBuffer"
-})
-
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
@@ -77,10 +65,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 })
 
-
 -- lint
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    callback = function()
-        require("lint").try_lint()
-    end,
+	callback = function()
+		require("lint").try_lint()
+	end,
 })

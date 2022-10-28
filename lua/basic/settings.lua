@@ -1,11 +1,10 @@
-
 vim.o.fenc = "utf-8"
 vim.o.fencs = "utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936"
 vim.o.encoding = "utf-8"
 vim.o.fileencodings = "utf-8,chinese,latin-1,gbk,gb18030,gk2312"
 
 
-vim.g.floaterm_shell='powershell.exe -NoLogo'
+vim.g.floaterm_shell = 'powershell.exe -NoLogo'
 vim.g.floaterm_width = 0.8
 vim.g.floaterm_height = 0.8
 vim.g.floaterm_autoclose = 0
@@ -13,12 +12,12 @@ vim.g.floaterm_autoclose = 0
 
 vim.o.clipboard = "" --unnamed unnamedplus
 
-vim.o.pumheight=10
-vim.o.completeopt = "menu,preview"
+vim.o.pumheight = 10
+vim.o.completeopt = "menu,preview,noinsert"
 
 vim.o.updatetime = 300
 vim.o.timeoutlen = 300
-vim.o.sessionoptions="buffers,curdir,folds,winsize,winpos"
+vim.o.sessionoptions = "buffers,curdir,folds,winsize,winpos"
 vim.o.undofile = true
 vim.o.shortmess = "filnxtToOFI"
 vim.o.signcolumn = "yes"
