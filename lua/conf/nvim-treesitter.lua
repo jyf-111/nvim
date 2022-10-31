@@ -12,7 +12,7 @@ require("nvim-treesitter.configs").setup(
 		-- 安装的高亮支持来源
 		ensure_installed = {
 			"c", "cpp", "lua", "python", "java",
-			"html", "javascript", "query"
+			"html", "css", "javascript", "query"
 		},
 		-- 同步下载高亮支持
 		sync_install = true,

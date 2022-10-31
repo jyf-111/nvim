@@ -15,6 +15,4 @@ require("basic.keybinds")
 require("basic.plugins")
 require("basic.autocmd")
 require("conf.onedark")
--- vim.cmd [[ colorscheme gruvbox-baby ]]
 require("conf.coc")
--- vim.cmd [[source C:\Users\jyf\AppData\Local\nvim\lua\conf\coc.lua ]]
