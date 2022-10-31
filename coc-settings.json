@@ -3,83 +3,6 @@
 // https://github.com/neoclide/coc-java
 // https://github.com/xiyaowong/coc-sumneko-lua
 {
-    "languageserver": {
-        "coc-clangd": {
-            "command": "clangd.cmd",
-            "rootPatterns": [
-                "compile_flags.txt",
-                "compile_commands.json"
-            ],
-            "filetypes": [
-                "c",
-                "cc",
-                "cpp",
-                "c++",
-                "objc",
-                "objcpp"
-            ]
-        },
-        "lua": {
-            "command": "lua-language-server.cmd",
-            "args": [],
-            "rootPatterns": [
-                ".git"
-            ],
-            "filetypes": [
-                "lua"
-            ]
-        },
-        "cmake": {
-            "command": "cmake-language-server.cmd",
-            "filetypes": [
-                "cmake"
-            ],
-            "rootPatterns": [
-                "build/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        }
-    },
-    //https://github.com/neoclide/coc.nvim/issues/3792
-    "git.floatConfig": {
-        "border": true
-    },
-    "diagnostic.floatConfig": {
-        "border": true
-    },
-    "signature.floatConfig": {
-        "border": true
-    },
-    "hover.floatConfig": {
-        "border": true
-    },
-    //"suggest.floatConfig": {
-    //    "border": true
-    //},
-    //coc-highlight
-    "colors.filetypes": [
-        "*"
-    ],
-    //clangd
-    "clangd.arguments": [],
-    "clangd.fallbackFlags": [],
-    "clangd.path": "C:/Users/jyf/AppData/Local/nvim-data/mason/bin/clangd.cmd",
-    //jdtls
-    "java.jdt.ls.home": "C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/",
-    "tsserver.locale": "zn-ch",
-    "sumneko-lua.enableNvimLuaDev": true,
-    //markdown-preview
-    "markdown-preview-enhanced.enableScriptExecution": true,
-    //coc-explorer
-    "explorer.width": 25,
-    "explorer.file.showHiddenFiles": true,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.file.reveal.whenOpen": true,
-    "explorer.quitOnOpen": true,
-    //coc-webview
-    "webview.colorStrategy": "dark",
     "suggest.noselect": false,
     "suggest.enablePreselect": true,
     "suggest.autoTrigger": "always",
@@ -121,7 +44,7 @@
     "diagnostic.hintSign": "\uf864",
     "diagnostic.displayByAle": false,
     "diagnostic.refreshOnInsertMode": false,
-    "diagnostic.checkCurrentLine": true,
+    "diagnostic.checkCurrentLine": false,
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
@@ -146,5 +69,96 @@
         "lua",
         "bash"
     ],
-    "git.enableGutters": true
+    "git.enableGutters": true,
+    // https://github.com/neoclide/coc.nvim/issues/3792
+    "git.floatConfig": {
+        "border": true
+    },
+    "diagnostic.floatConfig": {
+        "border": true
+    },
+    "signature.floatConfig": {
+        "border": true
+    },
+    "hover.floatConfig": {
+        "border": true
+    },
+    //"suggest.floatConfig": {
+    //    "border": true
+    //},
+    "languageserver": {
+        "coc-clangd": {
+            "command": "clangd.cmd",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        },
+        "lua": {
+            "command": "lua-language-server.cmd",
+            "args": [],
+            "rootPatterns": [
+                ".git"
+            ],
+            "filetypes": [
+                "lua"
+            ]
+        },
+        "cmake": {
+            "command": "cmake-language-server.cmd",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        }
+    },
+    //clangd
+    "clangd.arguments": [
+        "--clang-tidy", // 开启clang-tidy
+        "--function-arg-placeholders=false",
+        "--all-scopes-completion", // 全代码库补全
+        "--completion-style=detailed", // 详细补全
+        "--header-insertion=iwyu",
+        // "--pch-storage=disk", // 如果内存够大可以关闭这个选项
+        "--log=error",
+        "--j=5", // 后台线程数，可根据机器配置自行调整
+        "--background-index"
+    ],
+    "clangd.fallbackFlags": [],
+    "clangd.path": "~/AppData/Local/nvim-data/mason/bin/clangd.cmd",
+    //jdtls
+    "java.jdt.ls.home": "C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/",
+    //https://github.com/neoclide/coc-java/issues/116#issuecomment-702565513
+    //"java.jdt.ls.vmargs": "-javaagent:C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/lombok.jar",
+    "java.jdt.ls.trace.server": "verbose",
+    "tsserver.locale": "zn-ch",
+    //sumneko-lua
+    "sumneko-lua.enableNvimLuaDev": true,
+    //markdown-preview
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    //coc-explorer
+    "explorer.width": 25,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.file.reveal.whenOpen": true,
+    "explorer.quitOnOpen": true,
+    //coc-webview
+    "webview.colorStrategy": "dark",
+    //coc-highlight
+    "colors.filetypes": [
+        "*"
+    ]
 }
