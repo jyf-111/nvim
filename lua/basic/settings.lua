@@ -13,7 +13,7 @@ vim.g.floaterm_autoclose = 0
 vim.o.clipboard = "" --unnamed unnamedplus
 
 vim.o.pumheight = 10
-vim.o.completeopt = "menu,preview,noinsert"
+vim.o.completeopt = "menu,preview"
 
 vim.o.updatetime = 300
 vim.o.timeoutlen = 300

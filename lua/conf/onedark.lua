@@ -40,7 +40,10 @@ require("onedark").setup {
 		PmenuSel                    = { fg = "NONE", bg = "#5f668a" },
 		Pmenu                       = { fg = "#C5CDD9", bg = "NONE" },
 		CocMenuSel                  = { bg = "#13354A" },
-		CocListLine                 = { bg = "#13354A" }
+		CocListLine                 = { bg = "#13354A" },
+		DiffChange                  = { bg = "None" },
+		DiffAdd                     = { bg = "None" },
+		DiffDelete                  = { bg = "None" },
 	}, -- Override highlight groups
 	diagnostics = {
 		darker = false, -- darker colors for diagnostic

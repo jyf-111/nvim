@@ -24,16 +24,17 @@ keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r
 -- Use <c-j> to trigger snippets
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 -- Use <c-space> to trigger completion.
-keyset("i", "<c-e>", "coc#refresh()", { silent = true, expr = true })
+keyset("i", "<leader>e", "coc#refresh()", { silent = true, expr = true })
+keyset("i", "<C-e>", "coc#pum#cancel()", { silent = true, expr = true })
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
+keyset("n", "g[", "<Plug>(coc-diagnostic-prev)", { silent = true })
+keyset("n", "g]", "<Plug>(coc-diagnostic-next)", { silent = true })
 
 -- GoTo code navigation.
 keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
+keyset("n", "gD", "<Plug>(coc-type-definition)", { silent = true })
 keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
 keyset("n", "go", ":<C-u>CocList diagnostics<cr>", opts)
@@ -95,7 +96,7 @@ keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 
 -- Remap keys for applying codeAction to the current buffer.
-keyset("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
+keyset("n", "<leader>ca", "<Plug>(coc-codeaction)", opts)
 
 
 -- Apply AutoFix to problem on the current line.
@@ -151,9 +152,35 @@ vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'edito
 -- provide custom statusline: lightline.vim, vim-airline.
 
 -- vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+-- set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}
 
 -- Mappings for CoCList
 -- code actions and coc stuff
 ---@diagnostic disable-next-line: redefined-local
 local opts = { silent = true, nowait = true }
 -- Show all diagnostics.
+
+-- coc-git
+-- navigate chunks of current buffer
+keyset("n", "[g", "<Plug>(coc-git-prevchunk)", opts)
+keyset("n", "]g", "<Plug>(coc-git-nextchunk)", opts)
+
+-- navigate conflicts of current buffer
+keyset("n", "[c", "<Plug>(coc-git-prevconflict)", opts)
+keyset("n", "c]", "<Plug>(coc-git-nextconflict)", opts)
+
+-- " show chunk diff at current position
+keyset("n", "gp", "<Plug>(coc-git-chunkinfo)", opts)
+keyset("n", "gs", "<cmd>CocCommand git.chunkStage<CR>", opts)
+
+-- " show commit contains current position
+keyset("n", "gm", "<Plug>(coc-git-commit)", opts)
+
+-- " create text object for git chunks
+keyset("o", "ig", "<Plug>(coc-git-chunk-inner)", opts)
+keyset("x", "ig", "<Plug>(coc-git-chunk-inner)", opts)
+keyset("o", "ig", "<Plug>(coc-git-chunk-outter)", opts)
+keyset("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
+
+-- nnoremap <silent> <leader>gg
+keyset("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)

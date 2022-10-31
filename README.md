@@ -1,12 +1,7 @@
-gcc make cmake fzf 
-
-[nodejs,npm](https://nodejs.org/en/)
-[python](https://www.python.org/downloads/)
-[fd](https://github.com/sharkdp/fd)
-[ripgrep](https://github.com/BurntSushi/ripgrep)
+gcc make cmake fzf nodejs npm python fd ripgrep
 
 - web-toos
-on wsl need link cmd
+( on wsl need link cmd )
 sudo npm install -g browser-sync / paru -S nodejs-browser-sync
 
 - telescope
@@ -15,4 +10,4 @@ sqlite3 [sqlite.dll windows](https://www.sqlite.org/download.html) ,on ubuntu sq
 
 touch vim.fn.stdpath "data" .. '/telescope_history.sqlite3
 
-coc.nvim 和 autopair <CR>绑定上冲突
+coc.nvim 和 windwp/nvim-autopairs<CR>绑定上冲突

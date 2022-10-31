@@ -31,7 +31,11 @@ require('telescope').setup {
 	pickers = {
 		find_files = {
 			theme = "dropdown",
-			previewer = false
+			previewer = false,
+			hidden = true, -- will still show the inside of `.git/` as it's not `.gitignore`d.
+			-- find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
+			find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+			prompt_prefix = "Files> ",
 		},
 		diagnostics = {
 			theme = "ivy",
@@ -42,14 +46,6 @@ require('telescope').setup {
 		},
 	},
 	extensions = {
-		packer = {
-			theme = "ivy",
-			previewer = false,
-			border = true,
-			layout_config = {
-				height = .9
-			}
-		},
 		project = {
 			theme = "dropdown",
 			hidden_files = true, -- default: false

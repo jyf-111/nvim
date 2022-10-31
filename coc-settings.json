@@ -55,9 +55,9 @@
     "hover.floatConfig": {
         "border": true
     },
-    "suggest.floatConfig": {
-        "border": true
-    },
+    //"suggest.floatConfig": {
+    //    "border": true
+    //},
     //coc-highlight
     "colors.filetypes": [
         "*"
