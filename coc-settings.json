@@ -78,14 +78,6 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.file.reveal.whenOpen": true,
     "explorer.quitOnOpen": true,
-    "explorer.previewAction.onHover": "content",
-    "explorer.previewAction.content.maxHeight": 90,
-    "explorer.file.hiddenRules": {
-        "filenames": [
-            ".git"
-        ],
-        "patternMatches": []
-    },
     //coc-webview
     "webview.colorStrategy": "dark",
     "suggest.noselect": false,
