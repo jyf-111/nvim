@@ -1,17 +1,14 @@
 vim.g.mapleader = " "
-
 vim.api.nvim_set_keymap("n", "<leader>1", "<cmd>CocCommand explorer<CR>", { noremap = true, silent = true })
 
 -- vim-floaterm
-vim.api.nvim_set_keymap("n", "\\", "<cmd>FloatermToggle<CR>",
+vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>FloatermToggle<CR>",
 	{ noremap = true, silent = true })
 
 -- 运行代码
 vim.api.nvim_set_keymap("n", "<F7>", "<cmd>AsyncTask build<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<F8>", "<cmd>AsyncTask run<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-A-n>", "<plug>SnipRun<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-A-r>", "<plug>SnipReset<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-A-c>", "<plug>SnipClose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-A-n>", "<plug>SnipClose<CR>", { noremap = true, silent = true })
 
 -- 调试代码
 vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue() 		<CR>", { noremap = true, silent = true })

@@ -184,3 +184,6 @@ keyset("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 
 -- nnoremap <silent> <leader>gg
 keyset("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)
+
+-- coc-yank
+keyset("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", opts)

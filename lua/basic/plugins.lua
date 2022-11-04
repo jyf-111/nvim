@@ -28,6 +28,8 @@ packer.startup(
 				branch = 'release',
 				confg = function() require("conf.coc") end
 			}
+			-- [vimtex](https://github.com/lervag/vimtex)
+			use "lervag/vimtex"
 			use {
 				"williamboman/mason.nvim",
 				config = function() require("mason").setup() end
@@ -39,7 +41,6 @@ packer.startup(
 				'linty-org/key-menu.nvim',
 				config = function() require("conf.key-menu") end
 			}
-
 			-- vim-floaterm
 			use 'voldikss/vim-floaterm'
 			--  draw
@@ -60,7 +61,6 @@ packer.startup(
 			-- [web-tools](https://github.com/ray-x/web-tools.nvim)
 			use {
 				"ray-x/web-tools.nvim",
-				run = "npm install -g browser-sync",
 				config = function() require 'web-tools'.setup() end
 			}
 			-- test
