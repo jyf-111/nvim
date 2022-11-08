@@ -21,12 +21,16 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 -- <C-g>u breaks current undo, please make your own choice.
 keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
--- Use <c-j> to trigger snippets
+-- Use <C-l> for trigger snippet expand.
+keyset("n", "<C-l>", "<Plug>(coc-snippets-expand)")
+-- Use <c-j> to trigger snippets (make expand higher priority.)
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
--- Use <c-space> to trigger completion.
-keyset("i", "<leader>e", "coc#refresh()", { silent = true, expr = true })
-keyset("i", "<C-e>", "coc#pum#cancel()", { silent = true, expr = true })
+-- Use <C-j> for select text for visual placeholder of snippet.
+keyset("v", "<C-j>", "<Plug>(coc-snippets-select)")
+-- Use <leader>x for convert visual selected code to snippet
+keyset("x", "<leader>x", "<Plug>(coc-convert-snippet)")
 
+keyset("i", "<C-e>", "coc#pum#cancel()", { silent = true, expr = true })
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 keyset("n", "g[", "<Plug>(coc-diagnostic-prev)", { silent = true })

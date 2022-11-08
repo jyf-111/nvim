@@ -28,6 +28,7 @@ packer.startup(
 				branch = 'release',
 				confg = function() require("conf.coc") end
 			}
+			use "honza/vim-snippets"
 			-- [vimtex](https://github.com/lervag/vimtex)
 			use "lervag/vimtex"
 			use {

@@ -29,7 +29,9 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.showcmd = false
-vim.o.cmdheight = 1
+if vim.fn.has("nvim-0.8.0") then
+	vim.o.cmdheight = 0
+end
 vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.cursorline = false
