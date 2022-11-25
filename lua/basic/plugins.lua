@@ -23,27 +23,32 @@ packer.startup(
 		function(use)
 			use "wbthomason/packer.nvim"
 			use 'lewis6991/impatient.nvim'
+			use 'navarasu/onedark.nvim'
+			use 'github/copilot.vim'
+			use {
+				"folke/todo-comments.nvim",
+				requires = "nvim-lua/plenary.nvim",
+				config = function() require("conf.todo-comments") end
+			}
+			use {
+				"akinsho/toggleterm.nvim",
+				config = function() require("conf.toggleterm") end
+			}
 			use {
 				'neoclide/coc.nvim',
 				branch = 'release',
 				confg = function() require("conf.coc") end
 			}
 			use "honza/vim-snippets"
-			-- [vimtex](https://github.com/lervag/vimtex)
 			use "lervag/vimtex"
 			use {
 				"williamboman/mason.nvim",
 				config = function() require("mason").setup() end
 			}
-			-- theme
-			use 'navarasu/onedark.nvim'
-			--  key-menu
 			use {
 				'linty-org/key-menu.nvim',
 				config = function() require("conf.key-menu") end
 			}
-			-- vim-floaterm
-			use 'voldikss/vim-floaterm'
 			--  draw
 			use {
 				"jbyuki/venn.nvim",
@@ -59,7 +64,6 @@ packer.startup(
 				"Shatur/neovim-session-manager",
 				config = function() require("conf.neovim-session-manager") end
 			}
-			-- [web-tools](https://github.com/ray-x/web-tools.nvim)
 			use {
 				"ray-x/web-tools.nvim",
 				config = function() require 'web-tools'.setup() end
@@ -80,7 +84,6 @@ packer.startup(
 					require("conf.neotest")
 				end
 			}
-			-- lua-line
 			use {
 				'nvim-lualine/lualine.nvim',
 				requires = {
@@ -88,31 +91,26 @@ packer.startup(
 				},
 				config = function() require("conf.lualine") end
 			}
-			-- hop.nvim
 			use {
 				'phaazon/hop.nvim',
 				branch = 'v2',
 				config = function() require("conf.hop") end
 			}
-			-- [surround](https://github.com/ur4ltz/surround.nvim)
 			use {
 				"ur4ltz/surround.nvim",
 				config = function()
 					require "surround".setup { mappings_style = "surround" }
 				end
 			}
-			-- indent_blankline
 			use {
 				"lukas-reineke/indent-blankline.nvim",
 				config = function() require("conf.indent_blankline") end
 			}
-			-- comment
 			use {
 				'numToStr/Comment.nvim',
 				requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
 				config = function() require('conf.comment') end
 			}
-			-- telescope
 			use {
 				"nvim-telescope/telescope.nvim",
 				requires = {
@@ -125,11 +123,9 @@ packer.startup(
 						run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 					},
 					{ 'GustavoKatel/telescope-asynctasks.nvim' },
-					{ 'dawsers/telescope-floaterm.nvim' },
 				},
 				config = function() require("conf.telescope") end
 			}
-			-- treesitter
 			use {
 				'nvim-treesitter/nvim-treesitter',
 				run = ':TSUpdate',
@@ -142,13 +138,11 @@ packer.startup(
 				},
 				config = function() require("conf.nvim-treesitter") end
 			}
-			-- debug
 			use {
 				{ "mfussenegger/nvim-dap", config = function() require('conf.nvim-dap') end },
 				{ "rcarriga/nvim-dap-ui", config = function() require('conf.nvim-dap-ui') end },
 				{ "theHamsta/nvim-dap-virtual-text", config = function() require("conf.nvim-dap-virtual-text") end },
 			}
-			-- lint
 			use {
 				'mfussenegger/nvim-lint',
 				config = function() require("conf.nvim-lint") end

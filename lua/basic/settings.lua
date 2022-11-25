@@ -3,15 +3,7 @@ vim.o.fencs = "utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936"
 vim.o.encoding = "utf-8"
 vim.o.fileencodings = "utf-8,chinese,latin-1,gbk,gb18030,gk2312"
 
-
-vim.g.floaterm_shell = 'pwsh.exe -NoLogo'
-vim.g.floaterm_width = 0.8
-vim.g.floaterm_height = 0.8
-vim.g.floaterm_autoclose = 0
-
-
 vim.o.clipboard = "" --unnamed unnamedplus
-
 vim.o.pumheight = 10
 vim.o.completeopt = "menu,preview"
 
@@ -29,9 +21,7 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.showcmd = false
-if vim.fn.has("nvim-0.8.0") then
-	vim.o.cmdheight = 0
-end
+vim.o.cmdheight = 0
 vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.cursorline = false

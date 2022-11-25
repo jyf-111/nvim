@@ -1,4 +1,4 @@
-gcc make cmake fzf nodejs npm python fd ripgrep
+gcc make cmake fzf nodejs npm python fd ripgrep unzip
 
 - web-toos
 ( on wsl need link cmd )

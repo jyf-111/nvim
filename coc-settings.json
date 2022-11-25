@@ -112,18 +112,6 @@
                 "lua"
             ]
         },
-        "cmake": {
-            "command": "cmake-language-server.cmd",
-            "filetypes": [
-                "cmake"
-            ],
-            "rootPatterns": [
-                "build/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        }
     },
     //clangd
     "clangd.arguments": [
@@ -160,5 +148,6 @@
     //coc-highlight
     "colors.filetypes": [
         "*"
-    ]
+    ],
+    "snippets.ultisnips.pythonPrompt": false
 }

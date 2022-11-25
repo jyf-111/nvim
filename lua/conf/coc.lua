@@ -1,4 +1,26 @@
 -- https://github.com/neoclide/coc.nvim
+vim.g.coc_global_extensions = {
+	"coc-copilot",
+	"coc-pairs",
+	"coc-snippets",
+	"coc-yank",
+	"coc-git",
+	"coc-highlight",
+	"coc-lightbulb",
+	"coc-lists",
+	"coc-webview",
+	"coc-explorer",
+	"coc-marketplace",
+	"coc-cmake",
+	"coc-vimtex",
+	"coc-pyright",
+	"coc-markdown-preview-enhanced",
+	"coc-css",
+	"coc-java",
+	"coc-clangd",
+	"coc-tsserver",
+	"coc-json"
+}
 
 -- Some servers have issues with backup files, see #649.
 local keyset = vim.keymap.set
