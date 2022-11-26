@@ -1,12 +1,72 @@
+vim.g.coc_global_extensions = {
+	"coc-copilot",
+	"coc-pairs",
+	"coc-snippets",
+	"coc-yank",
+	"coc-git",
+	"coc-highlight",
+	"coc-lightbulb",
+	"coc-lists",
+	"coc-webview",
+	"coc-explorer",
+	"coc-marketplace",
+	"coc-cmake",
+	"coc-vimtex",
+	"coc-pyright",
+	"coc-markdown-preview-enhanced",
+	"coc-css",
+	"coc-java",
+	"coc-clangd",
+	"coc-tsserver",
+	"coc-json"
+}
+
 vim.o.fenc = "utf-8"
 vim.o.fencs = "utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936"
 vim.o.encoding = "utf-8"
 vim.o.fileencodings = "utf-8,chinese,latin-1,gbk,gb18030,gk2312"
 
-vim.o.clipboard = "" --unnamed unnamedplus
-vim.o.pumheight = 10
-vim.o.completeopt = "menu,preview"
+if vim.fn.has("wsl") == 0 and vim.fn.has("win32") == 1 then
+	vim.g.sqlite_clib_path = "C:/Windows/System32/sqlite3.dll"
+end
 
+if vim.fn.has('wsl') == 1 then
+	vim.cmd [[
+	let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': ['/mnt/c/windows/system32/clip.exe'],
+          \      '*': ['/mnt/c/windows/system32/clip.exe'],
+          \    },
+          \   'paste': {
+          \      '+': ['/mnt/c/windows/system32/clip.exe'],
+          \      '*': ['/mnt/c/windows/system32/clip.exe'],
+          \   },
+          \   'cache_enabled': 1,
+          \ }
+]]
+else
+	vim.o.clipboard = "" --unnamed unnamedplus
+end
+
+local powershell_options = {
+	shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
+	shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+	shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+	shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+	shellquote = "",
+	shellxquote = "",
+}
+
+if vim.fn.has('win32')==1 and vim.fn.has("linux")==0 then
+	for option, value in pairs(powershell_options) do
+		vim.opt[option] = value
+	end
+end
+
+vim.o.pumheight = 10
+
+vim.o.completeopt = "menu,preview"
 vim.o.updatetime = 300
 vim.o.timeoutlen = 300
 vim.o.sessionoptions = "buffers,curdir,folds,winsize,winpos"

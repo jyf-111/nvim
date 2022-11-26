@@ -17,72 +17,32 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-local packer = require("packer")
-packer.startup(
+require("packer").startup(
 	{
 		function(use)
 			use "wbthomason/packer.nvim"
 			use 'lewis6991/impatient.nvim'
 			use 'navarasu/onedark.nvim'
-			use 'github/copilot.vim'
+			use { 'linty-org/key-menu.nvim', config = function() require("conf.key-menu") end }
+			use { "jbyuki/venn.nvim", config = function() require("conf.venn") end }
+			use { "Shatur/neovim-session-manager", config = function() require("conf.neovim-session-manager") end }
+			use { "ray-x/web-tools.nvim", config = function() require 'web-tools'.setup() end }
 			use {
 				"folke/todo-comments.nvim",
 				requires = "nvim-lua/plenary.nvim",
 				config = function() require("conf.todo-comments") end
 			}
-			use {
-				"akinsho/toggleterm.nvim",
-				config = function() require("conf.toggleterm") end
-			}
-			use {
-				'neoclide/coc.nvim',
-				branch = 'release',
-				confg = function() require("conf.coc") end
-			}
-			use "honza/vim-snippets"
-			use "lervag/vimtex"
-			use {
-				"williamboman/mason.nvim",
-				config = function() require("mason").setup() end
-			}
-			use {
-				'linty-org/key-menu.nvim',
-				config = function() require("conf.key-menu") end
-			}
-			--  draw
-			use {
-				"jbyuki/venn.nvim",
-				config = function() require("conf.venn") end
-			}
-			-- async
+			use { "akinsho/toggleterm.nvim", config = function() require("conf.toggleterm") end }
 			use {
 				'skywind3000/asyncrun.vim',
 				requires = 'skywind3000/asynctasks.vim',
 				config = function() vim.cmd [[  let g:asyncrun_open = 6 ]] end
 			}
+
 			use {
-				"Shatur/neovim-session-manager",
-				config = function() require("conf.neovim-session-manager") end
-			}
-			use {
-				"ray-x/web-tools.nvim",
-				config = function() require 'web-tools'.setup() end
-			}
-			-- test
-			use {
-				"nvim-neotest/neotest",
-				requires = {
-					"vim-test/vim-test",
-					'nvim-lua/plenary.nvim',
-					"nvim-neotest/neotest-plenary",
-					"nvim-treesitter/nvim-treesitter",
-					"nvim-neotest/neotest-python",
-					"nvim-neotest/neotest-vim-test",
-				},
-				config = function()
-					require("conf.vim-test")
-					require("conf.neotest")
-				end
+				'phaazon/hop.nvim',
+				branch = 'v2',
+				config = function() require("conf.hop") end
 			}
 			use {
 				'nvim-lualine/lualine.nvim',
@@ -91,21 +51,8 @@ packer.startup(
 				},
 				config = function() require("conf.lualine") end
 			}
-			use {
-				'phaazon/hop.nvim',
-				branch = 'v2',
-				config = function() require("conf.hop") end
-			}
-			use {
-				"ur4ltz/surround.nvim",
-				config = function()
-					require "surround".setup { mappings_style = "surround" }
-				end
-			}
-			use {
-				"lukas-reineke/indent-blankline.nvim",
-				config = function() require("conf.indent_blankline") end
-			}
+			use { "ur4ltz/surround.nvim", config = function() require "surround".setup { mappings_style = "surround" } end }
+			use { "lukas-reineke/indent-blankline.nvim", config = function() require("conf.indent_blankline") end }
 			use {
 				'numToStr/Comment.nvim',
 				requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
@@ -122,6 +69,7 @@ packer.startup(
 					{ 'nvim-telescope/telescope-fzf-native.nvim',
 						run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 					},
+					{ "nvim-telescope/telescope-symbols.nvim" },
 					{ 'GustavoKatel/telescope-asynctasks.nvim' },
 				},
 				config = function() require("conf.telescope") end
@@ -138,14 +86,31 @@ packer.startup(
 				},
 				config = function() require("conf.nvim-treesitter") end
 			}
+			use "honza/vim-snippets"
+			use "lervag/vimtex"
+			use 'github/copilot.vim'
+			use { 'neoclide/coc.nvim', branch = 'release' }
+			use { "williamboman/mason.nvim", config = function() require("mason").setup() end }
 			use {
 				{ "mfussenegger/nvim-dap", config = function() require('conf.nvim-dap') end },
 				{ "rcarriga/nvim-dap-ui", config = function() require('conf.nvim-dap-ui') end },
 				{ "theHamsta/nvim-dap-virtual-text", config = function() require("conf.nvim-dap-virtual-text") end },
 			}
+			use { 'mfussenegger/nvim-lint', config = function() require("conf.nvim-lint") end }
 			use {
-				'mfussenegger/nvim-lint',
-				config = function() require("conf.nvim-lint") end
+				"nvim-neotest/neotest",
+				requires = {
+					"vim-test/vim-test",
+					'nvim-lua/plenary.nvim',
+					"nvim-neotest/neotest-plenary",
+					"nvim-treesitter/nvim-treesitter",
+					"nvim-neotest/neotest-python",
+					"nvim-neotest/neotest-vim-test",
+				},
+				config = function()
+					require("conf.vim-test")
+					require("conf.neotest")
+				end
 			}
 			if packer_bootstrap then require('packer').sync() end
 		end,

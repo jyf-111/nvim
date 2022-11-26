@@ -1,95 +1,159 @@
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap("n", "<leader>1", "<cmd>CocCommand explorer<CR>", { noremap = true, silent = true })
 
--- vim-floaterm
-vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>FloatermToggle<CR>",
-	{ noremap = true, silent = true })
+-- venn
+vim.keymap.set('n', '<leader>v', ":lua Toggle_venn()<CR> <cmd>IndentBlanklineDisable<CR>", { noremap = true })
 
 -- 运行代码
-vim.api.nvim_set_keymap("n", "<F7>", "<cmd>AsyncTask build<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F8>", "<cmd>AsyncTask run<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-A-n>", "<plug>SnipClose<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F7>", "<cmd>AsyncTask build<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F8>", "<cmd>AsyncTask run<CR>", { noremap = true, silent = true })
 
 -- 调试代码
-vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue() 		<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over() 		<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F12>", "<cmd>lua require'dap'.step_into() 		<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue() 		<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over() 		<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_into() 		<CR>", { noremap = true, silent = true })
 
 -- 基础按键
-vim.api.nvim_set_keymap("n", "<C-u>", "9k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-d>", "9j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-u>", "9k", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-d>", "9j", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<A-up>", "<cmd> res+5				<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-down>", "<cmd> res-5				<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-left>", "<cmd> vertical resize-5	<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-right>", "<cmd> vertical resize+5	<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-H>", "<C-w>H", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-J>", "<C-w>J", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-K>", "<C-w>K", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-L>", "<C-w>L", { noremap = true, silent = true })
-
+vim.keymap.set("n", "<A-up>", "<cmd> res+5				<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-down>", "<cmd> res-5				<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-left>", "<cmd> vertical resize-5	<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-right>", "<cmd> vertical resize+5	<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-H>", "<C-w>H", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-J>", "<C-w>J", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-K>", "<C-w>K", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-L>", "<C-w>L", { noremap = true, silent = true })
 
 
 -- 取消find
-vim.api.nvim_set_keymap("n", "<CR><CR>", "<cmd>noh<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<CR><CR>", "<cmd>noh<CR>", { noremap = true, silent = true })
 -- buffer
-vim.api.nvim_set_keymap("n", "<A-1>", "<cmd>LualineBuffersJump! 1<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-2>", "<cmd>LualineBuffersJump! 2<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-3>", "<cmd>LualineBuffersJump! 3<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-4>", "<cmd>LualineBuffersJump! 4<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-5>", "<cmd>LualineBuffersJump! 5<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-6>", "<cmd>LualineBuffersJump! 6<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-7>", "<cmd>LualineBuffersJump! 7<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-8>", "<cmd>LualineBuffersJump! 8<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-9>", "<cmd>LualineBuffersJump! 9<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-$>", "<cmd>LualineBuffersJump! $<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-1>", "<cmd>LualineBuffersJump! 1<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-2>", "<cmd>LualineBuffersJump! 2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-3>", "<cmd>LualineBuffersJump! 3<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-4>", "<cmd>LualineBuffersJump! 4<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-5>", "<cmd>LualineBuffersJump! 5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-6>", "<cmd>LualineBuffersJump! 6<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-7>", "<cmd>LualineBuffersJump! 7<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-8>", "<cmd>LualineBuffersJump! 8<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-9>", "<cmd>LualineBuffersJump! 9<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-$>", "<cmd>LualineBuffersJump! $<CR>", { noremap = true, silent = true })
 
--- find key
-vim.api.nvim_set_keymap("n", "<leader>fk", "<cmd>Telescope  keymaps theme=dropdown<CR>",
+vim.keymap.set("n", "<leader>fk", "<cmd>Telescope  keymaps<CR>",
 	{ noremap = true, silent = true })
--- current_buf_fuzzy_find
-vim.api.nvim_set_keymap("n", "<leader>f/", "<cmd>Telescope  current_buffer_fuzzy_find theme=ivy<CR>",
+vim.keymap.set("n", "<leader>f/", "<cmd>Telescope  current_buffer_fuzzy_find<CR>",
 	{ noremap = true, silent = true })
--- diagnostic
-vim.api.nvim_set_keymap("n", "<leader>fd", "<cmd>Telescope  diagnostics<CR>",
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files <CR>",
 	{ noremap = true, silent = true })
--- 查找文件
-vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown<CR>",
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep <CR>",
 	{ noremap = true, silent = true })
--- 查找文字
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep theme=dropdown<CR>",
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags <CR>",
 	{ noremap = true, silent = true })
--- 查找帮助文档
-vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags theme=dropdown<CR>",
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>",
 	{ noremap = true, silent = true })
--- 查找最近打开的文件
-vim.api.nvim_set_keymap("n", "<leader>fo", "<cmd>Telescope oldfiles theme=dropdown <CR>",
+vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers <CR>",
 	{ noremap = true, silent = true })
--- 查找 marks 标记
-vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope marks theme=dropdown<CR>", { noremap = true, silent = true })
--- buffer
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers theme=dropdown <CR>",
-	{ noremap = true, silent = true })
--- 工作区
-vim.api.nvim_set_keymap("n", "<leader>fp",
+vim.keymap.set("n", "<leader>fp",
 	"<cmd>lua require'telescope'.extensions.project.project{display_type = 'full'}<CR>",
 	{ noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>z', [[<cmd>lua require'telescope'.extensions.z.list{}<CR>]],
-	{ noremap = true, silent = true })
--- symbols
-vim.api.nvim_set_keymap("n", "<leader>fe",
+vim.keymap.set("n", "<leader>fe",
 	"<cmd>lua require'telescope.builtin'.symbols{'nerd','emoji','gitemoji','julia'} <CR>",
 	{ noremap = true, silent = true })
--- floaterm
-vim.api.nvim_set_keymap("n", "<leader>ft", "<Cmd>Telescope floaterm theme=dropdown <CR>",
+vim.keymap.set("n", "<leader>fa", "<Cmd>Telescope asynctasks all theme=dropdown <CR>",
 	{ noremap = true, silent = true })
--- asynctasks
-vim.api.nvim_set_keymap("n", "<leader>fa", "<Cmd>Telescope asynctasks all theme=dropdown <CR>",
-	{ noremap = true, silent = true })
--- venn
-vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR> <cmd>IndentBlanklineDisable<CR>", { noremap = true })
+
+
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+vim.keymap.set("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+vim.keymap.set("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
+
+vim.keymap.set("n", "g[", "<Plug>(coc-diagnostic-prev)", { silent = true })
+vim.keymap.set("n", "g]", "<Plug>(coc-diagnostic-next)", { silent = true })
+vim.keymap.set("n", "gd", "<Plug>(coc-definition)", { silent = true })
+vim.keymap.set("n", "gD", "<Plug>(coc-type-definition)", { silent = true })
+vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", { silent = true })
+vim.keymap.set("n", "gr", "<Plug>(coc-references)", { silent = true })
+vim.keymap.set("n", "go", ":<C-u>CocList diagnostics<cr>", opts)
+
+vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
+vim.keymap.set("x", "<A-S-f>", "<Plug>(coc-format-selected)", { silent = true })
+vim.keymap.set("n", "<A-S-f>", ":Format<CR>", { silent = true })
+
+vim.keymap.set("n", "K", function()
+	local cw = vim.fn.expand('<cword>')
+	if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
+		vim.api.nvim_command('h ' .. cw)
+	elseif vim.api.nvim_eval('coc#rpc#ready()') then
+		vim.fn.CocActionAsync('doHover')
+	else
+		vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+	end
+end, { silent = true })
+
+---@diagnostic disable-next-line: redefined-local
+local opts = { silent = true, nowait = true, expr = true }
+vim.keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
+vim.keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+vim.keymap.set("i", "<C-f>",
+	'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+vim.keymap.set("i", "<C-b>",
+	'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+vim.keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
+vim.keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+
+
+---@diagnostic disable-next-line: redefined-local
+local opts = { silent = true, nowait = true }
+vim.keymap.set("x", "<leader>ca", "<Plug>(coc-codeaction-selected)", opts)
+vim.keymap.set("n", "<leader>ca", "<Plug>(coc-codeaction)", opts)
+vim.keymap.set("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
+vim.keymap.set("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
+
+vim.api.nvim_create_augroup("CocGroup", {})
+vim.api.nvim_create_autocmd("CursorHold", {
+	group = "CocGroup",
+	command = "silent call CocActionAsync('highlight')",
+	desc = "Highlight symbol under cursor on CursorHold"
+})
+vim.api.nvim_create_autocmd("User", {
+	group = "CocGroup",
+	pattern = "CocJumpPlaceholder",
+	command = "call CocActionAsync('showSignatureHelp')",
+	desc = "Update signature help on jump placeholder"
+})
+
+vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
+vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })
+vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
+
+---@diagnostic disable-next-line: redefined-local
+local opts = { silent = true, nowait = true }
+vim.keymap.set("n", "<leader>t", "<cmd>CocCommand explorer<CR>", opts)
+vim.keymap.set("n", "<leader>e", ":<C-u>CocList extensions<cr>", opts)
+vim.keymap.set("n", "<leader>m", ":<C-u>CocList commands<cr>", opts)
+vim.keymap.set("n", "<leader>o", ":<C-u>CocList outline<cr>", opts)
+vim.keymap.set("n", "<leader>s", ":<C-u>CocList -I symbols<cr>", opts)
+vim.keymap.set("n", "<leader>j", ":<C-u>CocNext<cr>", opts)
+vim.keymap.set("n", "<leader>k", ":<C-u>CocPrev<cr>", opts)
+vim.keymap.set("n", "<leader>p", ":<C-u>CocListResume<cr>", opts)
+-- coc-git
+vim.keymap.set("n", "[g", "<Plug>(coc-git-prevchunk)", opts)
+vim.keymap.set("n", "]g", "<Plug>(coc-git-nextchunk)", opts)
+vim.keymap.set("n", "[c", "<Plug>(coc-git-prevconflict)", opts)
+vim.keymap.set("n", "c]", "<Plug>(coc-git-nextconflict)", opts)
+vim.keymap.set("n", "gp", "<Plug>(coc-git-chunkinfo)", opts)
+vim.keymap.set("n", "gs", "<cmd>CocCommand git.chunkStage<CR>", opts)
+vim.keymap.set("n", "gm", "<Plug>(coc-git-commit)", opts)
+vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-inner)", opts)
+vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-inner)", opts)
+vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-outter)", opts)
+vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
+vim.keymap.set("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)
+vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", opts)

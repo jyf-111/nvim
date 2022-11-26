@@ -54,21 +54,7 @@
     "coc.preferences.extensionUpdateCheck": "never",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     // 保存时调整格式
-    "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "json",
-        "java",
-        "python",
-        "vue",
-        "c",
-        "cpp",
-        "markdown",
-        "lua",
-        "bash"
-    ],
+    "coc.preferences.formatOnSaveFiletypes": [],
     "git.enableGutters": true,
     // https://github.com/neoclide/coc.nvim/issues/3792
     "git.floatConfig": {
