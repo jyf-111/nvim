@@ -157,3 +157,4 @@ vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)
 vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", opts)
+

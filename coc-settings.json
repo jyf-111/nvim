@@ -135,5 +135,5 @@
     "colors.filetypes": [
         "*"
     ],
-    "snippets.ultisnips.pythonPrompt": false
+    "snippets.ultisnips.pythonPrompt": false,
 }
