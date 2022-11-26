@@ -129,6 +129,8 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.file.reveal.whenOpen": true,
     "explorer.quitOnOpen": true,
+    "explorer.keyMappings.global": {
+    },
     //coc-webview
     "webview.colorStrategy": "dark",
     //coc-highlight

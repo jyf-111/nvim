@@ -20,42 +20,30 @@ local packer_bootstrap = ensure_packer()
 require("packer").startup(
 	{
 		function(use)
-			use "wbthomason/packer.nvim"
-			use 'lewis6991/impatient.nvim'
-			use 'navarasu/onedark.nvim'
+			use { 'wbthomason/packer.nvim' }
+			use { 'lewis6991/impatient.nvim' }
+			use { 'navarasu/onedark.nvim' }
 			use { 'linty-org/key-menu.nvim', config = function() require("conf.key-menu") end }
-			use { "jbyuki/venn.nvim", config = function() require("conf.venn") end }
-			use { "Shatur/neovim-session-manager", config = function() require("conf.neovim-session-manager") end }
-			use { "ray-x/web-tools.nvim", config = function() require 'web-tools'.setup() end }
+			use { 'jbyuki/venn.nvim', config = function() require("conf.venn") end }
+			use { 'Shatur/neovim-session-manager', config = function() require("conf.neovim-session-manager") end }
+			use { 'ray-x/web-tools.nvim', config = function() require 'web-tools'.setup() end }
+			use { 'tpope/vim-fugitive' }
 			use {
-				"folke/todo-comments.nvim",
-				requires = "nvim-lua/plenary.nvim",
+				"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim",
 				config = function() require("conf.todo-comments") end
 			}
 			use { "akinsho/toggleterm.nvim", config = function() require("conf.toggleterm") end }
 			use {
-				'skywind3000/asyncrun.vim',
-				requires = 'skywind3000/asynctasks.vim',
+				'skywind3000/asyncrun.vim', requires = 'skywind3000/asynctasks.vim',
 				config = function() vim.cmd [[  let g:asyncrun_open = 6 ]] end
 			}
-
-			use {
-				'phaazon/hop.nvim',
-				branch = 'v2',
-				config = function() require("conf.hop") end
-			}
-			use {
-				'nvim-lualine/lualine.nvim',
-				requires = {
-					'kyazdani42/nvim-web-devicons',
-				},
-				config = function() require("conf.lualine") end
-			}
+			use { 'phaazon/hop.nvim', branch = 'v2', config = function() require("conf.hop") end }
+			use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons',
+				config = function() require("conf.lualine") end }
 			use { "ur4ltz/surround.nvim", config = function() require "surround".setup { mappings_style = "surround" } end }
 			use { "lukas-reineke/indent-blankline.nvim", config = function() require("conf.indent_blankline") end }
 			use {
-				'numToStr/Comment.nvim',
-				requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+				'numToStr/Comment.nvim', requires = "JoosepAlviste/nvim-ts-context-commentstring",
 				config = function() require('conf.comment') end
 			}
 			use {
@@ -86,8 +74,8 @@ require("packer").startup(
 				},
 				config = function() require("conf.nvim-treesitter") end
 			}
-			use "honza/vim-snippets"
-			use "lervag/vimtex"
+			use 'honza/vim-snippets'
+			use 'lervag/vimtex'
 			use 'github/copilot.vim'
 			use { 'neoclide/coc.nvim', branch = 'release' }
 			use { "williamboman/mason.nvim", config = function() require("mason").setup() end }
