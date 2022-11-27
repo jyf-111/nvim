@@ -115,6 +115,7 @@
     "clangd.fallbackFlags": [],
     "clangd.path": "~/AppData/Local/nvim-data/mason/bin/clangd.cmd",
     //jdtls
+    "java.home": "C:/Users/jyf/scoop/apps/openjdk/current",
     "java.jdt.ls.home": "C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/",
     //https://github.com/neoclide/coc-java/issues/116#issuecomment-702565513
     //"java.jdt.ls.vmargs": "-javaagent:C:/Users/jyf/AppData/Local/nvim-data/mason/packages/jdtls/lombok.jar",
