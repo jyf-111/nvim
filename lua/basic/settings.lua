@@ -58,7 +58,7 @@ local powershell_options = {
 	shellxquote = "",
 }
 
-if vim.fn.has('win32')==1 and vim.fn.has("linux")==0 then
+if vim.fn.has('win32') == 1 and vim.fn.has("linux") == 0 then
 	for option, value in pairs(powershell_options) do
 		vim.opt[option] = value
 	end
@@ -67,8 +67,8 @@ end
 vim.o.pumheight = 10
 
 vim.o.completeopt = "menu,preview"
-vim.o.updatetime = 100
-vim.o.timeoutlen = 100
+vim.o.updatetime = 100 -- update interval for gitsigns
+vim.o.timeoutlen = 300 -- key sequence timeout
 vim.o.sessionoptions = "buffers,curdir,folds,winsize,winpos"
 vim.o.undofile = true
 vim.o.shortmess = "filnxtToOFI"

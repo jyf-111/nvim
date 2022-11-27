@@ -2,6 +2,7 @@
 // https://github.com/clangd/coc-clangd
 // https://github.com/neoclide/coc-java
 // https://github.com/xiyaowong/coc-sumneko-lua
+// https://github.com/weirongxu/coc-explore 
 {
     "suggest.noselect": false,
     "suggest.enablePreselect": true,
@@ -130,14 +131,13 @@
     "explorer.file.reveal.whenOpen": true,
     "explorer.quitOnOpen": true,
     "explorer.keyMappings.global": {
-        "*" : false,
+        "*": false,
         "<space>": "toggleSelection",
         "<tab>": "actionMenu",
         "<cr>": [
-            "wait",
-            "expandable?",
-            "expand",
-            "open"
+            "expanded?",
+            "collapse",
+            "expand"
         ],
     },
     //coc-webview
