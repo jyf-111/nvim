@@ -130,6 +130,15 @@
     "explorer.file.reveal.whenOpen": true,
     "explorer.quitOnOpen": true,
     "explorer.keyMappings.global": {
+        "*" : false,
+        "<space>": "toggleSelection",
+        "<tab>": "actionMenu",
+        "<cr>": [
+            "wait",
+            "expandable?",
+            "expand",
+            "open"
+        ],
     },
     //coc-webview
     "webview.colorStrategy": "dark",

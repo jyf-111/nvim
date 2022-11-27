@@ -67,8 +67,8 @@ end
 vim.o.pumheight = 10
 
 vim.o.completeopt = "menu,preview"
-vim.o.updatetime = 300
-vim.o.timeoutlen = 300
+vim.o.updatetime = 100
+vim.o.timeoutlen = 100
 vim.o.sessionoptions = "buffers,curdir,folds,winsize,winpos"
 vim.o.undofile = true
 vim.o.shortmess = "filnxtToOFI"
