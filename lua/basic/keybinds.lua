@@ -2,18 +2,20 @@ vim.g.mapleader = " "
 
 -- venn
 vim.keymap.set('n', '<leader>v', ":lua Toggle_venn()<CR> <cmd>IndentBlanklineDisable<CR>", { noremap = true })
+-- coc-yank
+vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", { noremap = true, silent = true })
 
--- 运行代码
+-- run
 vim.keymap.set("n", "<F7>", "<cmd>AsyncTask build<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<F8>", "<cmd>AsyncTask run<CR>", { noremap = true, silent = true })
 
--- 调试代码
+-- debug
 vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue() 		<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over() 		<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_into() 		<CR>", { noremap = true, silent = true })
 
--- 基础按键
+-- basic
 vim.keymap.set("n", "<C-u>", "9k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-d>", "9j", { noremap = true, silent = true })
 
@@ -148,18 +150,17 @@ vim.keymap.set("n", "[g", "<Plug>(coc-git-prevchunk)", opts)
 vim.keymap.set("n", "]g", "<Plug>(coc-git-nextchunk)", opts)
 vim.keymap.set("n", "[c", "<Plug>(coc-git-prevconflict)", opts)
 vim.keymap.set("n", "c]", "<Plug>(coc-git-nextconflict)", opts)
-vim.keymap.set("n", "ghp", "<Plug>(coc-git-chunkinfo)", opts)
-vim.keymap.set("n", "ghs", "<cmd>CocCommand git.chunkStage<CR>", opts)
-vim.keymap.set("n", "ghS", "<cmd>CocCommand git.chunkUnstage<CR>", opts)
-vim.keymap.set("n", "ghr", "<cmd>CocCommand git.chunkUndo<CR>", opts)
-vim.keymap.set("n", "ghd", "<cmd>CocCommand git.diffCached<CR>", opts)
-vim.keymap.set("n", "ghb", "<cmd>CocCommand git.showBlameDoc<CR>", opts)
-vim.keymap.set("n", "gho", "<cmd>CocCommand git.browserOpen<CR>", opts)
-vim.keymap.set("n", "ghzc", "<cmd>CocCommand git.foldUnchangeS<CR>", opts)
-vim.keymap.set("n", "ghc", "<Plug>(coc-git-commit)", opts)
+vim.keymap.set("n", "<leader>hp", "<Plug>(coc-git-chunkinfo)", opts)
+vim.keymap.set("n", "<leader>hs", "<cmd>CocCommand git.chunkStage<CR>", opts)
+vim.keymap.set("n", "<leader>hS", "<cmd>CocCommand git.chunkUnstage<CR>", opts)
+vim.keymap.set("n", "<leader>hr", "<cmd>CocCommand git.chunkUndo<CR>", opts)
+vim.keymap.set("n", "<leader>hd", "<cmd>CocCommand git.diffCached<CR>", opts)
+vim.keymap.set("n", "<leader>hb", "<cmd>CocCommand git.showBlameDoc<CR>", opts)
+vim.keymap.set("n", "<leader>ho", "<cmd>CocCommand git.browserOpen<CR>", opts)
+vim.keymap.set("n", "<leader>hf", "<cmd>CocCommand git.foldUnchanged<CR>", opts)
+vim.keymap.set("n", "<leader>hc", "<Plug>(coc-git-commit)", opts)
 vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-inner)", opts)
 vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-inner)", opts)
 vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)
-vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", opts)
