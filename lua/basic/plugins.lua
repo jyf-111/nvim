@@ -23,6 +23,7 @@ require("packer").startup(
 			use { 'wbthomason/packer.nvim' }
 			use { 'lewis6991/impatient.nvim' }
 			use { 'navarasu/onedark.nvim' }
+			use { 'phaazon/hop.nvim', config = function() require('hop').setup() end }
 			use { 'linty-org/key-menu.nvim', config = function() require("conf.key-menu") end }
 			use { 'jbyuki/venn.nvim', config = function() require("conf.venn") end }
 			use { 'Shatur/neovim-session-manager', config = function() require("conf.neovim-session-manager") end }
@@ -37,7 +38,6 @@ require("packer").startup(
 				'skywind3000/asyncrun.vim', requires = 'skywind3000/asynctasks.vim',
 				config = function() vim.cmd [[  let g:asyncrun_open = 6 ]] end
 			}
-			use { 'phaazon/hop.nvim', branch = 'v2', config = function() require("conf.hop") end }
 			use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons',
 				config = function() require("conf.lualine") end }
 			use { "ur4ltz/surround.nvim", config = function() require "surround".setup { mappings_style = "surround" } end }
