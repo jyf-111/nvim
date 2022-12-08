@@ -87,7 +87,7 @@
                 "c++",
                 "objc",
                 "objcpp"
-            ]
+            ],
         },
         "lua": {
             "command": "lua-language-server.cmd",
@@ -110,7 +110,8 @@
         // "--pch-storage=disk", // 如果内存够大可以关闭这个选项
         "--log=error",
         "--j=5", // 后台线程数，可根据机器配置自行调整
-        "--background-index"
+        "--background-index",
+        "--fallback-style=google",
     ],
     "clangd.fallbackFlags": [],
     "clangd.path": "~/AppData/Local/nvim-data/mason/bin/clangd.cmd",
@@ -141,6 +142,8 @@
             "expand"
         ],
     },
+    //coc-yaml
+    "yaml.schemaStore.url": "https://www.schemastore.org/api/json/catalog.json",
     //coc-webview
     "webview.colorStrategy": "dark",
     //coc-highlight

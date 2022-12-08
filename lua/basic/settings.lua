@@ -18,7 +18,8 @@ vim.g.coc_global_extensions = {
 	"coc-java",
 	"coc-clangd",
 	"coc-tsserver",
-	"coc-json"
+	"coc-json",
+	"coc-yaml",
 }
 
 vim.o.fenc = "utf-8"
