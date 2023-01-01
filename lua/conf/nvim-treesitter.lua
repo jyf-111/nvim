@@ -44,12 +44,12 @@ require("nvim-treesitter.configs").setup(
 			}
 		},
 		indent = {
-			enable = true,
+			enable = false,
 			disable = {}
 		},
 		yati = {
 			enable = true,
-			disable = { "css", "graphql", "html", "javascript", "typescript", "json", "lua", "python", "rust", "toml", "vue" },
+			disable = {},
 			default_lazy = true,
 			default_fallback = "asis"
 		},

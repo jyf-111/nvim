@@ -26,7 +26,6 @@ require("packer").startup(
 			use { 'phaazon/hop.nvim', config = function() require('hop').setup() end }
 			use { 'linty-org/key-menu.nvim', config = function() require("conf.key-menu") end }
 			use { 'jbyuki/venn.nvim', config = function() require("conf.venn") end }
-			use { 'Shatur/neovim-session-manager', config = function() require("conf.neovim-session-manager") end }
 			use { 'ray-x/web-tools.nvim', config = function() require 'web-tools'.setup() end }
 			use { 'tpope/vim-fugitive' }
 			use {
