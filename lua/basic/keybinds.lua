@@ -2,8 +2,17 @@ vim.g.mapleader = " "
 
 -- venn
 vim.keymap.set('n', '<leader>v', ":lua Toggle_venn()<CR> <cmd>IndentBlanklineDisable<CR>", { noremap = true })
--- coc-yank
-vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", { noremap = true, silent = true })
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Toggle todo comments" })
 
 -- hop
 vim.api.nvim_set_keymap("n", ";", "<cmd>HopWord<CR>", { noremap = true, silent = true })
@@ -40,7 +49,7 @@ vim.keymap.set("n", "<A-K>", "<C-w>K", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-L>", "<C-w>L", { noremap = true, silent = true })
 
 
--- 取消find
+-- no hightlight
 vim.keymap.set("n", "<CR><CR>", "<cmd>noh<CR>", { noremap = true, silent = true })
 -- buffer
 vim.keymap.set("n", "<A-1>", "<cmd>LualineBuffersJump! 1<CR>", { noremap = true, silent = true })
@@ -171,3 +180,5 @@ vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-inner)", opts)
 vim.keymap.set("o", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("x", "ig", "<Plug>(coc-git-chunk-outter)", opts)
 vim.keymap.set("n", "<leader>gg", ":<C-u>CocList --normal gstatus<CR>", opts)
+-- coc-yank
+vim.keymap.set("n", "<leader>y", ":<C-u>CocList -A --normal yank<cr>", { noremap = true, silent = true })

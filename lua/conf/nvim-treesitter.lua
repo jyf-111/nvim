@@ -9,15 +9,12 @@ local rainbow = { "#CC8888", "#CCCC88", "#88CC88", "#88CCCC", "#8888CC", "#CC88C
 
 require("nvim-treesitter.configs").setup(
 	{
-		-- 安装的高亮支持来源
 		ensure_installed = {
 			"c", "cpp", "lua", "python", "java",
 			"html", "css", "javascript", "query",
 			"latex"
 		},
-		-- 同步下载高亮支持
 		sync_install = true,
-		-- 高亮相关
 		highlight = {
 			enable = true,
 			disable = function(lang, buf)
@@ -29,17 +26,12 @@ require("nvim-treesitter.configs").setup(
 			end,
 			additional_vim_regex_highlighting = false
 		},
-		-- 范围选择
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				-- 初始化选择
 				init_selection = "<CR>",
-				-- 递增
 				node_incremental = "<CR>",
-				-- 递减
 				node_decremental = "<BS>",
-				-- 选择一个范围
 				scope_incremental = "<TAB>"
 			}
 		},

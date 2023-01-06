@@ -21,7 +21,6 @@ require("packer").startup(
 	{
 		function(use)
 			use { 'wbthomason/packer.nvim' }
-			use { 'lewis6991/impatient.nvim' }
 			use { 'navarasu/onedark.nvim' }
 			use { 'phaazon/hop.nvim', config = function() require('hop').setup() end }
 			use { 'linty-org/key-menu.nvim', config = function() require("conf.key-menu") end }

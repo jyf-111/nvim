@@ -17,8 +17,8 @@ require('lualine').setup {
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff' },
-		lualine_c = { { "diagnostics", sources = { 'coc' } } },
+		lualine_b = {},
+		lualine_c = { 'branch', 'diff', { "diagnostics", sources = { 'coc' } } },
 		lualine_x = { 'g:coc_status', "b:coc_current_function", 'encoding',
 			{ 'fileformat', symbols = { unix = 'LF', dos = 'CRLF', mac = 'CR' } }, 'filetype' },
 		lualine_y = {},

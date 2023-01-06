@@ -1,3 +1,7 @@
+if vim.fn.exists("g:neovide") then
+	vim.cmd("set guifont=JetBrainsMono\\ Nerd\\ Font\\ Mono:h16")
+end
+
 vim.g.coc_global_extensions = {
 	"coc-copilot",
 	"coc-pairs",
@@ -34,17 +38,17 @@ end
 if vim.fn.has('wsl') == 1 then
 	vim.cmd [[
 	let g:clipboard = {
-          \   'name': 'myClipboard',
-          \   'copy': {
-          \      '+': ['/mnt/c/windows/system32/clip.exe'],
-          \      '*': ['/mnt/c/windows/system32/clip.exe'],
-          \    },
-          \   'paste': {
-          \      '+': ['/mnt/c/windows/system32/clip.exe'],
-          \      '*': ['/mnt/c/windows/system32/clip.exe'],
-          \   },
-          \   'cache_enabled': 1,
-          \ }
+		  \   'name': 'myClipboard',
+		  \   'copy': {
+		  \      '+': ['/mnt/c/windows/system32/clip.exe'],
+		  \      '*': ['/mnt/c/windows/system32/clip.exe'],
+		  \    },
+		  \   'paste': {
+		  \      '+': ['/mnt/c/windows/system32/clip.exe'],
+		  \      '*': ['/mnt/c/windows/system32/clip.exe'],
+		  \   },
+		  \   'cache_enabled': 1,
+		  \ }
 ]]
 else
 	vim.o.clipboard = "" --unnamed unnamedplus
@@ -66,7 +70,6 @@ if vim.fn.has('win32') == 1 and vim.fn.has("linux") == 0 then
 end
 
 vim.o.pumheight = 10
-
 vim.o.completeopt = "menu,preview"
 vim.o.updatetime = 100 -- update interval for gitsigns
 vim.o.timeoutlen = 300 -- key sequence timeout
