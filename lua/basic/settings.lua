@@ -36,40 +36,6 @@ if vim.fn.has("wsl") == 0 and vim.fn.has("win32") == 1 then
 	vim.g.sqlite_clib_path = "C:/Windows/System32/sqlite3.dll"
 end
 
-if vim.fn.has('wsl') == 1 then
-	vim.cmd [[
-	let g:clipboard = {
-		  \   'name': 'myClipboard',
-		  \   'copy': {
-		  \      '+': ['/mnt/c/windows/system32/clip.exe'],
-		  \      '*': ['/mnt/c/windows/system32/clip.exe'],
-		  \    },
-		  \   'paste': {
-		  \      '+': ['/mnt/c/windows/system32/clip.exe'],
-		  \      '*': ['/mnt/c/windows/system32/clip.exe'],
-		  \   },
-		  \   'cache_enabled': 1,
-		  \ }
-]]
-else
-	vim.o.clipboard = "" --unnamed unnamedplus
-end
-
-local powershell_options = {
-	shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
-	shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
-	shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
-	shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
-	shellquote = "",
-	shellxquote = "",
-}
-
-if vim.fn.has('win32') == 1 and vim.fn.has("linux") == 0 then
-	for option, value in pairs(powershell_options) do
-		vim.opt[option] = value
-	end
-end
-
 vim.o.pumheight = 10
 vim.o.completeopt = "menu,preview"
 vim.o.updatetime = 100 -- update interval for gitsigns
