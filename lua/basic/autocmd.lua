@@ -1,12 +1,3 @@
--- will open coc-explorer rather than netrw
-vim.cmd [[
-augroup MyCocExplorer
-  autocmd!
-  autocmd VimEnter * sil! au! FileExplorer *
-  autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer ' . d | endif
-augroup END
-]]
-
 -- cursor
 -- 取消换行注释
 -- 用o换行不要延续注释
@@ -63,12 +54,5 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 			vim.fn.setpos(".", vim.fn.getpos("'\""))
 			vim.cmd("silent! foldopen")
 		end
-	end,
-})
-
--- lint
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	callback = function()
-		require("lint").try_lint()
 	end,
 })

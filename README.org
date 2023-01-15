@@ -1,0 +1,27 @@
+* requirement
+** DONE basic
+   CLOSED: [2023-01-15 Sun 23:33]
+- gcc 
+- make 
+- cmake 
+- nodejs 
+- npm 
+- python 
+- ripgrep 
+- unzip
+
+** DONE telescope.nvim
+   CLOSED: [2023-01-15 Sun 23:36]
+- repgrep 
+- fd 
+- sqlite3 
+  - on ubuntu need /sqlite3/ and /libsqlite3-dev/ 
+  - on windows it needs [[https://www.sqlite.org/download.html][sqlite.dll windows]]
+
+	
+* WAITING attention
+  1. 如果telescope的history有问题,需要手动创建telescope_history.json
+	 #+BEGIN_SRC sh
+	 touch vim.fn.stdpath "data" .. '/telescope_history.sqlite3
+	 #+END_SRC
+  2. =coc.nvim= 和 =windwp/nvim-autopairs= 和 =copilot.vim= tab绑定上冲突

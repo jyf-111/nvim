@@ -30,6 +30,7 @@ vim.o.fenc = "utf-8"
 vim.o.fencs = "utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936"
 vim.o.encoding = "utf-8"
 vim.o.fileencodings = "utf-8,chinese,latin-1,gbk,gb18030,gk2312"
+vim.cmd('language en_US.utf8')
 
 if vim.fn.has("wsl") == 0 and vim.fn.has("win32") == 1 then
 	vim.g.sqlite_clib_path = "C:/Windows/System32/sqlite3.dll"
